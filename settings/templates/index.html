@@ -1,0 +1,16 @@
+
+{% load filters %}
+
+<h1>You have arrived!</h1>
+
+<ul>
+{% for setting_type in available_setting_type_list %}
+    <li>{{ setting_type.name }}</li>
+    <ul>
+    {% for setting in settings_dictionary|lookup:setting_type.id %}
+    <li>{{ setting.value }}</li>
+    {% endfor %}
+    <li><a href="add-setting?type={{setting_type.id}}&value=this-is-a-setting">Add new setting</a></li>
+    </ul>
+{% endfor %}
+</ul>

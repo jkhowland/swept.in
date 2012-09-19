@@ -1,0 +1,10 @@
+You have asked to create a Swept Account. If this wasn't you, please
+ignore this email and your address will be removed from our records.
+
+To activate this account, please click the following link within the next 
+{{ expiration_days }} days:
+
+http://swept.in/activate/{{ activation_key }}
+
+Cheers,
+Swept Team

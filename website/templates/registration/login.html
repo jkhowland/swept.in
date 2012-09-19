@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block head_title %}Sign In &ndash; {{ block.super }}{% endblock %}
+
+{% block content %}
+
+  <h3>Sign In</h3>
+  
+  {% if form.errors %}
+    {{ form.non_field_errors }}
+    {% if form.email.errors or form.password.errors %}
+      <ul class="errorlist"><li>Your username and password didn't match. Please try again.</li></ul>
+    {% endif %}
+  {% else %}
+    <p>Please sign in with your Swept account. If you don't have an account, you can <a href="{% url registration_register %}">create one</a> for free.</p>
+  {% endif %}
+  
+  <form method="post" action="{% url django.contrib.auth.views.login %}">
+    <p>{% csrf_token %}</p>
+    <p>
+      {{ form.email.label_tag }}
+      {{ form.email }}
+    </p>
+    <p>
+      {{ form.password.label_tag }}
+      {{ form.password }}
+    </p>
+    <p><a href="{% url auth_password_reset %}">Having an</a> identity crisis? <a href="{% url registration_register %}">Need an account?</a></p>
+    
+    <input type="submit" value="Sign In" />
+    <input type="hidden" name="next" value="{{ next }}" />
+  </form>
+
+{% endblock %}

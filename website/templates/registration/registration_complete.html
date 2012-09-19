@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block head_title %}Confirmation Sent &ndash; {{ block.super }}{% endblock %}
+
+{% block content %}
+
+<h3>Create a Swept account</h3>
+
+  <h4>Almost Done...</h4>
+  
+  <p>Your information has been recorded, but there's one more step. We need you to confirm your email address.</p>
+  
+  <p>Please click on the link in the email we just sent to finish creating your account. Be sure to check your spam folder if you don't receive it.</p>
+  
+  <p>Once you've done that, you can <a href="http://{{ root_site.domain }}/login/">sign in</a> to your account.</p>
+
+{% endblock %}

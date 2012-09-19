@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Swept App</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	
+	<!-- styles -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}signup/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{ STATIC_URL }}signup/css/style.css">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+	
+	<!-- fonts, favicon, and touch icons -->
+	<link rel="shortcut icon" href="{{ STATIC_URL }}signup/img/favicon.png">
+	<link rel="apple-touch-icon" href="{{ STATIC_URL }}signup/img/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="{{ STATIC_URL }}signup/img/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="{{ STATIC_URL }}signup/img/apple-touch-icon-114x114.png">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css'>
+
+	<!-- .less -->
+	<link rel="stylesheet/less" href="less/bootstrap.less">
+	<script src="{{ STATIC_URL }}signup/js/less.js"></script>
+	
+	<!-- javascripts at the bottom for faster page loads -->
+</head> 
+<body class="top-highlight"> 
+
+<section class="nav">
+	<div class="container">
+		<div class="row-fluid">
+			<div class="span10">
+				<div class="logo">
+					<a href="index.html"><img src="{{ STATIC_URL }}signup/img/logo.png" alt="Learn Stack" /></a>
+				</div>
+			</div>		
+			<div class="span2">
+				<div class="login-btn">
+					<a href="#contact-modal" data-toggle="modal" class="contact-btn"><span class="displace"></span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section class="hero-area">
+	<div class="container">
+	<br /><br /><br />
+		<div class="hero-logo">
+			<img src="{{ STATIC_URL }}signup/img/logo-gray.png" alt="Learn Stack" />
+		</div>
+		<h3>Come in, sit down, and learn.</h3>
+		<!--
+		<div class="hero-screens">
+			<a href="#welcome-video" rel="tooltip" title="Find out more" data-toggle="modal" class="play-btn"><span class="displace"></span></a>
+		</div>
+		-->
+		<div class="early-access">
+			<form class="form-inline" action="forms/mailinglist.php" method="POST" enctype="multipart/form-data" name="contact-form">
+				<input type="text" class="input-large" placeholder="Email" name="email">
+				<button type="submit" class="btn btn-large btn-info">Get Early Access</button>
+			</form>
+		</div>
+	</div>
+</section>
+
+
+
+<!-- scripts & modals below -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="{{ STATIC_URL }}signup/bootstrap/js/bootstrap.min.js"></script>
+
+<script>
+$(document).ready(function(){
+	$(".login").hide();
+	$(".toggle-drawer").show();
+	
+	$('.toggle-drawer').click(function(){
+	$(".login").slideToggle();
+	});	
+});
+</script>
+
+<script>
+$(function() {
+    $('#myModal').modal('hide')
+});
+</script>
+
+
+
+
+<div class="modal hide fade" id="contact-modal">
+	<div class="modal-header">
+		<a class="close" data-dismiss="modal">×</a>
+		<h3>Get in touch</h3>
+	</div>
+	<div class="modal-body">
+		<form class="form-horizontal">
+			<fieldset>
+				<div class="control-group input-prepend">
+					<label class="control-label" for="email">Name</label>
+					<div class="controls">
+						<span class="add-on"><i class="icon-user"></i></span><input type="text" class="input-xlarge" id="email" name="email" >
+					</div>
+				</div>
+				<div class="control-group input-prepend">
+					<label class="control-label" for="email">Email</label>
+					<div class="controls">
+						<span class="add-on"><i class="icon-envelope"></i></span><input type="text" class="input-xlarge" id="email" name="email" >
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="message">Message</label>
+					<div class="controls">
+						<textarea class="input-xlarge" id="message" rows="4" name="message" ></textarea>
+						<p class="help-block">Or you can email us at <a href="#">support@swept.in</a></p>
+					</div>
+				</div>
+			</fieldset>
+  	</div>
+	<div class="modal-footer">
+			<a href="#" class="btn btn-info btn-large">Send</a>
+		</form>
+	</div>
+</div>
+
+
+<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
+chromium.org/developers/how-tos/chrome-frame-getting-started -->
+<!--[if lt IE 7 ]>
+<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+<![endif]-->
+
+<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->	
+
+</body>
+</html> 

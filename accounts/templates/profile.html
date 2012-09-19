@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block head_title %}My Account &ndash; {{ block.super }}{% endblock %}
+
+{% block content %}
+
+<p>Hello <strong>{{ user.email }}</strong></p>
+
+<ul>
+  <li><a href="{% url auth_logout %}">Sign out</a></li>
+  <li><a href="{% url newsletter_preferences %}">Newsletter preferences</a></li>
+  <li><a href="{% url auth_password_change %}">Change password</a></li>
+</ul>
+
+<ul>
+{% for app in available_apps_list %}
+    <li><a href="/apps/{{app.slug}},{{app.id}}/settings/">{{ app }}</a></li>
+{% endfor %}
+</ul>
+
+{% endblock %}

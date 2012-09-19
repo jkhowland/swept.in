@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block head_title %}Create a Swept account &ndash; {{ block.super }}{% endblock %}
+
+{% block content %}
+
+<h3>Create an Account</h3>
+    
+  {{ form.non_field_errors }}
+  
+  <form method="post" action="">
+    <p>{% csrf_token %}</p>
+    <p>
+      {{ form.email.errors }}
+      {{ form.email.label_tag }}
+      {{ form.email }}
+    </p>
+    <p>
+      {{ form.password1.errors }}
+      {{ form.password1.label_tag }}
+      {{ form.password1 }}
+    </p>
+    <p>
+      {{ form.password2.errors }}
+      {{ form.password2.label_tag }}
+      {{ form.password2 }}
+    </p>
+    <p>
+      {{ form.newsletter.errors }}
+      <ul>
+        <li><label for="newsletter_0">
+          <input type="radio" name="newsletter" value="True" id="newsletter_0"{% if form.newsletter.value == 'True' %} checked="checked"{% endif %}>
+          <span><strong>Yes</strong>, send me a newsletter once every few weeks to notify me of new benefits, as well as news, tips, and special offers.</span>
+        </label></li>
+        <li><label for="newsletter_1">
+          <input type="radio" name="newsletter" value="False" id="newsletter_1"{% if form.newsletter.value == 'False' %} checked="checked"{% endif %}>
+          <span><strong>No</strong>, I'll just check back myself periodically.</span>
+        </label></li>
+      </ul>
+    </p>
+    <p><input type="submit" value="Create Account" /></p>
+  </form>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block head_title %}Confirmation Sent &ndash; {{ block.super }}{% endblock %}
+
+{% block content %}
+
+{% if account %}
+<h3>Your account is now created!</h3>
+
+  <h4>Congratulations</h4>
+  
+  <p>Your account is now created! You can <a href="{% url auth_login %}">sign in</a> to your account using the email and password you provided at registration.</p>
+{% else %}
+<h3>Something didn't quite work there</h3>
+
+  <h4>Oops</h4>
+  
+  <p>It seems that your activation key is invalid. Please check the URL again.</p>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,413 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<!--Page Title-->
+<title>Modern Business 5</title>
+<!--Meta Tags-->
+<meta charset="utf-8">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<!-- Set Viewport-->
+<meta name="viewport" content="user-scalable=no,initial-scale=1.0, maximum-scale=1.0 width=device-width" />
+<!-- Allows WebApp-->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<!--Load CSS-->
+<!--Google Fonts-->
+<link href='http://fonts.googleapis.com/css?family=Muli:300,300italic' rel='stylesheet' type='text/css'>
+<!--Main CSS-->
+<link rel="stylesheet" href="css/screen.css" media="screen">
+<!--jQuery-->
+<script src="js/jquery.min.js"></script>
+<!--Respond.js-->
+<script src="js/respond.min.js"></script>
+<!--jQuery Plugins-->
+<script src="js/jquery.flexslider-min.js"></script>
+<script src="js/jquery.elastislide.js"></script>
+<script src="js/jquery.colorbox-min.js"></script>
+<script src="js/jquery.tipsy.js"></script>
+<script src="js/jquery.tweet.js"></script>
+<!--Custom JavaScript-->
+<script src="js/jquery.custom.js"></script>
+
+<script type="text/javascript">
+function validateForm()
+{
+var x=document.forms["contactform"]["name"].value;
+if (x==null || x=="")
+  {
+  alert("Please complete all the required fields");
+  return false;
+  }
+var x=document.forms["contactform"]["email"].value;
+var atpos=x.indexOf("@");
+var dotpos=x.lastIndexOf(".");
+if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
+  {
+  alert("Not a valid e-mail address");
+  return false;
+  }
+}
+</script>
+
+<script type="text/javascript">
+function validateForm()
+{
+var x=document.forms["contactform2"]["name"].value;
+if (x==null || x=="")
+  {
+  alert("Please complete all the required fields");
+  return false;
+  }
+var x=document.forms["contactform2"]["email"].value;
+var atpos=x.indexOf("@");
+var dotpos=x.lastIndexOf(".");
+if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
+  {
+  alert("Not a valid e-mail address");
+  return false;
+  }
+}
+</script>
+
+<!--HTML5 & CSS JS fix for Internet Explorer-->
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/ie9.js"></script>
+<![endif]-->
+
+</head>
+
+<!--Start Body-->
+
+<!-- Target everything but IE-->
+<!--[if !IE]><!-->
+<body id="not-ie" class="home">
+<!--<![endif]-->
+<!--Set body classes for IE bugs-->
+<!--[if IE 7]>
+<body id="ie7">
+<![endif]-->
+<!--[if IE 8]>
+<body id="ie8">
+<![endif]-->
+<!--[if IE 9]>
+<body id="ie9">
+<![endif]-->
+<!--Enb Body Classes-->
+
+<header>
+		<div class="wrapper">
+				<h1 class="logo"><img src="images/logo.png" alt="Modern Bussines 5"></h1>
+				<nav id="top-nav">
+						<ul>
+								<li><a class="active" href="#">Home</a></li>
+								<li><a href="#">Company</a></li>
+								<li><a href="#">Contact</a></li>
+						</ul>
+				</nav>
+				<!--End Nav--> 
+		</div>
+		<!--End .wrapper--> 
+</header>
+
+<!--Start Splash-->
+
+<section class="splash">
+		<div class="wrapper">
+				<section id="buy-splash" class="splash-half first">
+						<section id="trial" class="box">
+								<h1 class="trial-title"><img src="images/30day.png" /></h1>
+								<span class="offer"></span>
+								<p>Everything you need to start, run and grow your business all in one free iPad app.</p>
+								<form action="mailer.php" id="contactform" method="post" onsubmit="return validateForm();">
+										<ul>
+												<li>
+														<input class="trial-name" name="name" type="text" value="Your Name" onblur="if(this.value == '') { this.value = 'Your Name'; }" onfocus="if(this.value == 'Your Name') { this.value = ''; }">
+												</li>
+												<li>
+														<input class="trial-email" name="email" type="text" value="Your Email" onblur="if(this.value == '') { this.value = 'Your Email'; }" onfocus="if(this.value == 'Your Email') { this.value = ''; }">
+												</li>
+										</ul>
+										<button class="blue" type="submit">Download your FREE 30 day trial</button>
+										<input type="checkbox" name="promotional_offers" value="Yes" checked="checked">
+										<label class="check-label">Yes! I would like to receive free promotional offers</label>
+								</form>
+						</section>
+				</section>
+				<section id="splash-img" class="splash-half"> <img src="images/iphones.png" alt="iPhones"> </section>
+		</div>
+</section>
+<!--End Splash--> 
+
+<!--Start Slider-->
+<div class="wrapper">
+		<h2>We work where you work.</h2>
+		<section class="container">
+				<section class="slider">   
+						<ul class="slides">
+								<li><a href="#"><img src="images/slide_01.jpg" alt="Slider Image"></a></li>
+								<li><a href="#"><img src="images/slide_02.jpg" alt="Slider Image"></a></li>
+								<li><a href="#"><img src="images/slide_03.jpg" alt="Slider Image"></a></li>
+						</ul>
+				</section>
+		</section>
+</div>
+<!--End Slider--> 
+
+<!--Start Video-->
+<div class="wrapper">
+		<h2>Our app is for everyone.</h2>
+		<section class="container">
+				<section class="one-half first">
+						<div class="video-frame"> 
+								<!--Vimeo Embed Code-->
+								
+								<iframe src="http://player.vimeo.com/video/8362481?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+								<!--End Vimeo Embed Code--> 
+								
+						</div>
+				</section>
+				<section class="one-half">
+						<h3>Success is in our history... and clients.</h3>
+						<p>Everything you need to start, run and grow your business all in one free iPad app. Sign up and we'll mail you a free credit card reader.</p>
+						<ul class="cta">
+								<li><a class="btn-blue" href="#"><span class="price">99&cent;</span>Buy now </a></li>
+						</ul>
+				</section>
+		</section>
+</div>
+<!--End Video--> 
+
+<!--Start Gallery-->
+<div class="wrapper">
+		<h2>Our app is beautiful.</h2>
+		<section class="container">
+				<h3 class="center">Created to display beautifully on any device.</h3>
+				<section id="carousel" class="carousel-wrapper">
+						<div class="carousel">
+								<ul class="gallery">
+										<li><a class="colorbox" href="images/gallery_01_large.jpg"><img src="images/gallery_01.jpg" alt="Image" /></a></li>
+										<li><a class="colorbox" href="images/gallery_02_large.jpg"><img src="images/gallery_02.jpg" alt="Image" /></a></li>
+										<li><a class="colorbox" href="images/gallery_03_large.jpg"><img src="images/gallery_03.jpg" alt="Image" /></a></li>
+										<li><a class="colorbox" href="images/gallery_01_large.jpg"><img src="images/gallery_01.jpg" alt="Image" /></a></li>
+										<li><a class="colorbox" href="images/gallery_02_large.jpg"><img src="images/gallery_02.jpg" alt="Image" /></a></li>
+										<li><a class="colorbox" href="images/gallery_03_large.jpg"><img src="images/gallery_03.jpg" alt="Image" /></a></li>
+										<li><a class="colorbox" href="images/gallery_01_large.jpg"><img src="images/gallery_01.jpg" alt="Image" /></a></li>
+										<li><a class="colorbox" href="images/gallery_02_large.jpg"><img src="images/gallery_02.jpg" alt="Image" /></a></li>
+								</ul>
+						</div>
+				</section>
+				<ul class="cta center">
+						<li><a class="btn-blue" href="#"><span class="price">99&cent;</span>Buy now </a></li>
+						<li class="split">- OR -</li>
+						<li><a class="btn-green" href="#">30 Day free trial</a></li>
+				</ul>
+		</section>
+</div>
+<!--End Gallery--> 
+
+<!--Start Half Columns-->
+<div class="wrapper">
+		<h2>our app has lots of benefits.</h2>
+		<section id="l-benefits" class="container">
+				<section class="one-half first"> <img src="images/wordpress_image.png" alt="WordPress" />
+						<h3>Built on the world's #1 cms.</h3>
+						<p>Everything you need to start, run and grow your business all in one free iPad app. Sign up and we'll mail you a free credit card reader. </p>
+				</section>
+				<section class="one-half"> <img src="images/wordpress_login.png" alt="WordPress Login" />
+						<h3>Built on the world's #1 cms.</h3>
+						<p>Everything you need to start, run and grow your business all in one free iPad app. Sign up and we'll mail you a free credit card reader. </p>
+				</section>
+		</section>
+</div>
+
+<!--End Half--> 
+
+<!--Start Image Based Benifits-->
+<div class="wrapper">
+		<h2>Benefits are what customers want.</h2>
+		<section id="s-benefits" class="container">
+				<section class="one-half first"> <img class="benefit" src="images/globe.png" alt="firefox">
+						<div class="right">
+								<h3>Benefit 1</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ullamcorper feugiat sem nec accumsan.</p>
+						</div>
+				</section>
+				<section class="one-half"> <img class="benefit" src="images/firefox.png" alt="firefox">
+						<div class="right">
+								<h3>Benefit 2</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ullamcorper feugiat sem nec accumsan.</p>
+						</div>
+				</section>
+				<section class="one-half first"> <img class="benefit" src="images/support.png" alt="firefox">
+						<div class="right">
+								<h3>Benefit 3</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ullamcorper feugiat sem nec accumsan.</p>
+						</div>
+				</section>
+				<section  class="one-half"> <img class="benefit" src="images/html5.png" alt="firefox">
+						<div class="right">
+								<h3>Benefit 4</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ullamcorper feugiat sem nec accumsan.</p>
+						</div>
+				</section>
+				<div class="clearfix"></div>
+				<ul class="cta center">
+						<li><a class="btn-blue" href="#"><span class="price">99&cent;</span>Buy now </a></li>
+						<li class="split">- OR -</li>
+						<li><a class="btn-green" href="#">30 Day free trial</a></li>
+				</ul>
+		</section>
+</div>
+<!--End image--> 
+
+<!--Start The Team-->
+<div class="wrapper">
+		<h2>MEET THE TEAM.</h2>
+		<section id="about" class="container">
+				<section class="one-third first"><img src="images/staff_member.png" alt="Staff"></section>
+				<section class="two-third">
+						<h3>Jonathan Atkinson</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ullamcorper feugiat sem nec accumsan. Quisque lobortis volutpat sem quis scelerisque. 
+								
+								Etiam posuere imperdiet diam, ut sollicitudin lacus adipiscing et. Nunc ac purus sed tortor tincidunt gravida. Cras ac turpis id nulla iaculis ultricies. Vestibulum metus diam, tempor ut tristique eu, hendrerit quis tellus. Quisque in diam sapien.</p>
+                                
+						<ul class="social">
+								<li><a href="#" class="gplus tip" title="Google Plus">Google Plus</a></li>
+								<li><a href="#" class="twitter tip" title="Twitter">Twiiter</a></li>
+								<li><a href="#" class="linkedin tip" title="Linkedin">linkedin</a></li>
+								<li><a href="#" class="facebook tip" title="Facebook">Facebook</a></li>
+						</ul>
+                                
+				</section>
+				<hr>
+				<blockquote>I enjoy Cheetos due to them being orange but tasting like cheese.. awesome invention!</blockquote>
+		</section>
+</div>
+<!--End the team--> 
+
+<!--Start The HTML Styles-->
+<div class="wrapper">
+		<h2>HERE'S ALL THE STYLES.</h2>
+		<section id="styles" class="container">
+				<section class="one-half first">
+						<hgroup>
+								<h1>Heading 1 tag</h1>
+								<h2>Heading 2 tag</h2>
+								<h3>Heading 3 tag</h3>
+								<h4>Heading 4 tag</h4>
+								<h5>Heading 5 tag</h5>
+								<h6>Heading 6 tag</h6>
+						</hgroup>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ullamcorper feugiat this is a <a class="tip" title="this is a tool tip" href="#">link style here hover over me</a></p>
+						<blockquote>I enjoy Cheetos due to them being orange but tasting like cheese.. awesome invention!</blockquote>
+				</section>
+				<section class="one-half">
+						<form>
+								<label>Your Name</label>
+								<br />
+								<input type="text">
+						</form>
+						<ul class="buttons">
+								<li><a class="btn-green" href="#"><span class="price">99&cent;</span>Buy now </a></li>
+								<li><a class="btn-green" href="#">30 Day free trial</a></li>
+								<li><a class="btn-blue" href="#"><span class="price">99&cent;</span>Buy now </a></li>
+								<li><a class="btn-blue" href="#">30 Day free trial</a></li>
+								<li><a class="btn-red" href="#"><span class="price">99&cent;</span>Buy now </a></li>
+								<li><a class="btn-red" href="#">30 Day free trial</a></li>
+								<li><a class="btn-grey" href="#"><span class="price">99&cent;</span>Buy now </a></li>
+								<li><a class="btn-grey" href="#">30 Day free trial</a></li>
+						</ul>
+				</section>
+				<hr class="clearfix">
+				<ol class="one-forth first">
+						<li> Lorem ipsum dolor sit</li>
+						<li> Lorem ipsum dolor sit</li>
+						<li> Lorem ipsum dolor sit</li>
+						<li> Lorem ipsum dolor sit</li>
+						<li> Lorem ipsum dolor sit</li>
+				</ol>
+				<ul class="one-forth">
+						<li> Lorem ipsum dolor sit</li>
+						<li> Lorem ipsum dolor sit</li>
+						<li> Lorem ipsum dolor sit</li>
+						<li> Lorem ipsum dolor sit</li>
+						<li> Lorem ipsum dolor sit</li>
+				</ul>
+				<ol class="one-forth">
+						<li> Lorem ipsum dolor sit</li>
+						<li> Lorem ipsum dolor sit</li>
+						<li> Lorem ipsum dolor sit</li>
+						<li> Lorem ipsum dolor sit</li>
+						<li> Lorem ipsum dolor sit</li>
+				</ol>
+				<ul class="one-forth">
+						<li> Lorem ipsum dolor sit</li>
+						<li> Lorem ipsum dolor sit</li>
+						<li> Lorem ipsum dolor sit</li>
+						<li> Lorem ipsum dolor sit</li>
+						<li> Lorem ipsum dolor sit</li>
+				</ul>
+		</section>
+</div>
+<!--End the HTML--> 
+
+<!--Start Contact-->
+<div class="wrapper">
+		<h2>let's hook up.</h2>
+		<section id="contact" class="container">
+				<section class="one-half first">
+						<h3>Subscribe to our mailing list</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ullamcorper feugiat sem nec accumsan.</p>
+                        
+                        <form action="mailer2.php" id="contactform2" method="post" onsubmit="return validateForm();">
+								<label>Your Name</label>
+								<br />
+								<input type="text" name="name" class="requiredField">
+								<br />
+								<label>Your Email</label>
+								<br />
+								<input type="text" name="email" class="requiredField">
+								<br />
+								<button class="btn-grey" type="submit" name="Subscribe" value="Subscribe">Subscribe</button>
+						</form>
+				</section>
+				<section class="one-half">
+						<h3>Join us on twitter</h3>
+						<!--TWITTER FEED-->
+						<div class="tweet"></div>
+						<h3>Follow us</h3>
+						<p>Follow us for free upgrades, special announcements and silly comments.</p>
+						<ul class="social">
+								<li><a href="#" class="gplus tip" title="Google Plus">Google Plus</a></li>
+								<li><a href="#" class="soundcloud tip" title="Soundcloud">SoundCloud</a></li>
+								<li><a href="#" class="vimeo tip" title="Vimeo"> Vimeo</a></li>
+								<li><a href="#" class="twitter tip" title="Twitter">Twiiter</a></li>
+								<li><a href="#" class="linkedin tip" title="Linkedin">linkedin</a></li>
+								<li><a href="#" class="facebook tip" title="Facebook">Facebook</a></li>
+						</ul>
+				</section>
+		</section>
+</div>
+<!--End Contact--> 
+
+<!--Start Footer-->
+<footer>
+		<div class="wrapper">
+				<h1 class="logo"><img src="images/logo.png" alt="Modern Bussines 5"></h1>
+				<nav id="bottom-nav">
+						<ul>
+								<li><a class="active" href="#">Home</a></li>
+								<li><a href="#">Company</a></li>
+								<li><a href="#">Contact</a></li>
+						</ul>
+				</nav>
+				<!--End Nav-->
+				
+				<hr class="clearfix">
+				<p class="copyright center"><a>Copyright 2012 WhistleMarketing Inc.</a></p>
+		</div>
+		<!--End .wrapper--> 
+		
+</footer>
+</body></html>

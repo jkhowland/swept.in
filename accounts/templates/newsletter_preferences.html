@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block head_title %}Newsletter Preferences &ndash; {{ block.super }}{% endblock %}
+
+{% block content %}
+
+<h3>Update your newsletter preferences</h3>
+
+<p>Sign up for the newsletter to receive news, tips, and special offers. You can unsubscribe at any time.</p>
+
+<form action="" method="post">
+  {% csrf_token %}
+  {{ form.errors }}
+  <ul>
+    <li><label for="newsletter_0">
+      <input type="radio" name="newsletter" value="True" id="newsletter_0"{% if form.newsletter.value == 'True' %} checked="checked"{% endif %}>
+      <span><strong>Yes</strong>, send me a newsletter once every few weeks to notify me of new benefits, as well as news, tips, and special offers.</span>
+    </label></li>
+    <li><label for="newsletter_1">
+      <input type="radio" name="newsletter" value="False" id="newsletter_1"{% if form.newsletter.value == 'False' %} checked="checked"{% endif %}>
+      <span><strong>No</strong>, I'll just check back myself periodically.</span>
+    </label></li>
+  </ul>
+  <input type="submit" value="Save Changes" />
+</form>
+
+{% endblock %}

@@ -1,0 +1,7 @@
+Django
+MySQL-python
+South
+django-registration
+django-email-as-username==1.4.6
+mailsnake
+django-tastypie
