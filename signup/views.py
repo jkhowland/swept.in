@@ -13,14 +13,14 @@ def earlyAccessSubmit(request):
     if request.method == 'POST': # If the form has been submitted...
         form = SignupForm(request.POST) # A form bound to the POST data
         if form.is_valid():
-          ms = MailSnake('52100db8492f533e2ac47428b90ce5bf-us5')
+          ms = MailSnake('60a810702ef83b7de50b150df5008109-us5')
           lists = ms.lists()
           ms.listSubscribe(
             id = lists['data'][0]['id'],
             email_address = form.cleaned_data['email'],
             merge_vars = {
                 'GROUPINGS': [
-                    {'id': 5665,
+                    {'id': 7197,
                      'groups': 'Pre-Launch',},]
                 },
             update_existing = True,

@@ -1,144 +1,164 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
-	<title>Thanks</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	
-	<!-- styles -->
-	<link rel="stylesheet" href="{{ STATIC_URL }}signup/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="{{ STATIC_URL }}signup/css/style.css">
+<!--Page Title-->
+<title>Swept App - Early Access</title>
+<!--Meta Tags-->
+<meta charset="utf-8">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<!-- Set Viewport-->
+<meta name="viewport" content="user-scalable=no,initial-scale=1.0, maximum-scale=1.0 width=device-width" />
+<!-- Allows WebApp-->
+<meta name="apple-mobile-web-app-capable" content="yes" />
 
-	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-	
-	<!-- fonts, favicon, and touch icons -->
-	<link rel="shortcut icon" href="{{ STATIC_URL }}signup/img/favicon.png">
-	<link rel="apple-touch-icon" href="{{ STATIC_URL }}signup/img/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="{{ STATIC_URL }}signup/img/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="{{ STATIC_URL }}signup/img/apple-touch-icon-114x114.png">
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css'>
-
-	
-	<!-- javascripts at the bottom for faster page loads -->
-
-</head> 
-<body class="top-highlight"> 
-
-<section class="nav">
-	<div class="container">
-		<div class="row-fluid">
-			<div class="span10">
-				<div class="logo">
-					<a href="/signup/"><img src="{{ STATIC_URL }}signup/img/logo.png" alt="Learn Stack" /></a>
-				</div>
-			</div>		
-			<div class="span2">
-				<div class="login-btn">
-					<a href="#contact-modal" data-toggle="modal" class="contact-btn"><span class="displace"></span></a>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+<link rel="icon" 
+      type="image/png" 
+      href="{{ STATIC_URL }}signup/images/myicon.png">
 
 
-<section class="hero-area">
-	<div class="container">
-	<br /><br /><br />
-		<div class="hero-logo">
-			<img src="{{ STATIC_URL }}signup/img/logo-gray.png" alt="Learn Stack" />
-		</div>
-		<h3>Simply awesome tools for mobile learning.</h3>
-		<!--
-		<div class="hero-screens">
-			<a href="#welcome-video" rel="tooltip" title="Find out more" data-toggle="modal" class="play-btn"><span class="displace"></span></a>
-		</div>
-		-->
-		<div class="early-access">
-			<h4>Thanks for signing up, we're excited that you're excited</h4>
-		</div>
-	</div>
-</section>
+<!--Load CSS-->
+<!--Google Fonts-->
+<link href='http://fonts.googleapis.com/css?family=Muli:300,300italic' rel='stylesheet' type='text/css'>
+<!--Main CSS-->
+<link rel="stylesheet" href="{{ STATIC_URL }}signup/css/screen.css" media="screen">
+<!--jQuery-->
+<script src="{{ STATIC_URL }}signup/js/jquery.min.js"></script>
+<!--Respond.js-->
+<script src="{{ STATIC_URL }}signup/js/respond.min.js"></script>
+<!--jQuery Plugins-->
+<script src="{{ STATIC_URL }}signup/js/jquery.flexslider-min.js"></script>
+<script src="{{ STATIC_URL }}signup/js/jquery.elastislide.js"></script>
+<script src="{{ STATIC_URL }}signup/js/jquery.colorbox-min.js"></script>
+<script src="{{ STATIC_URL }}signup/js/jquery.tipsy.js"></script>
+<script src="{{ STATIC_URL }}signup/js/jquery.tweet.js"></script>
+<!--Custom JavaScript-->
+<script src="{{ STATIC_URL }}signup/js/jquery.custom.js"></script>
 
-
-
-<!-- scripts & modals below -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="{{ STATIC_URL }}signup/bootstrap/js/bootstrap.min.js"></script>
-
-<script>
-$(document).ready(function(){
-	$(".login").hide();
-	$(".toggle-drawer").show();
-	
-	$('.toggle-drawer').click(function(){
-	$(".login").slideToggle();
-	});	
-});
+<script type="text/javascript">
+function validateForm()
+{
+var x=document.forms["contactform"]["name"].value;
+if (x==null || x=="")
+  {
+  alert("Please complete all the required fields");
+  return false;
+  }
+var x=document.forms["contactform"]["email"].value;
+var atpos=x.indexOf("@");
+var dotpos=x.lastIndexOf(".");
+if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
+  {
+  alert("Not a valid e-mail address");
+  return false;
+  }
+}
 </script>
 
-<script>
-$(function() {
-    $('#myModal').modal('hide')
-});
+<script type="text/javascript">
+function validateForm()
+{
+var x=document.forms["contactform2"]["name"].value;
+if (x==null || x=="")
+  {
+  alert("Please complete all the required fields");
+  return false;
+  }
+var x=document.forms["contactform2"]["email"].value;
+var atpos=x.indexOf("@");
+var dotpos=x.lastIndexOf(".");
+if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
+  {
+  alert("Not a valid e-mail address");
+  return false;
+  }
+}
 </script>
 
-
-
-
-<div class="modal hide fade" id="contact-modal">
-	<div class="modal-header">
-		<a class="close" data-dismiss="modal">×</a>
-		<h3>Get in touch</h3>
-	</div>
-	<div class="modal-body">
-	<!--
-		<form class="form-horizontal" action="/signup/send/" method="post">{% csrf_token %}
-			<fieldset>
-				<div class="control-group input-prepend">
-					<label class="control-label" for="name">Name</label>
-					<div class="controls">
-						<span class="add-on"><i class="icon-user"></i></span><input type="text" class="input-xlarge" id="id_name" name="name" >
-					</div>
-				</div>
-				<div class="control-group input-prepend">
-					<label class="control-label" for="email">Email</label>
-					<div class="controls">
-						<span class="add-on"><i class="icon-envelope"></i></span><input type="text" class="input-xlarge" id="id_email" name="email" >
-					</div>
-				</div>
-				<div class="control-group">
-					<label class="control-label" for="message">Message</label>
-					<div class="controls">
-						<textarea class="input-xlarge" id="id_message" rows="4" name="message" ></textarea>
-						<p class="help-block">Or you can email us at <a href="mailto:info@swept.in">info@swept.in</a></p>
-					</div>
-				</div>
-			</fieldset>
-  	-->
-  	<p class="help-block">Send us an email at <a href="mailto:info@swept.in">info@swept.in</a></p>
-  	</div>
-	<div class="modal-footer">
-	<!--
-			<button type="submit" value="Submit" class="btn btn-large btn-info">Send</button>
-		</form>
-	-->
-	</div>
-</div>
-
-
-<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
-chromium.org/developers/how-tos/chrome-frame-getting-started -->
-<!--[if lt IE 7 ]>
-<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+<!--HTML5 & CSS JS fix for Internet Explorer-->
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/ie9.js"></script>
 <![endif]-->
 
-<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-<!--[if lt IE 9]>
-</body>
-</html> 
+</head>
+
+<!--Start Body-->
+
+<!-- Target everything but IE-->
+<!--[if !IE]><!-->
+<body id="not-ie" class="home">
+<!--<![endif]-->
+<!--Set body classes for IE bugs-->
+<!--[if IE 7]>
+<body id="ie7">
+<![endif]-->
+<!--[if IE 8]>
+<body id="ie8">
+<![endif]-->
+<!--[if IE 9]>
+<body id="ie9">
+<![endif]-->
+<!--Enb Body Classes-->
+
+<header>
+		<div class="wrapper">
+				<h1 class="logo"><a href="http://swept.in"><img src="{{ STATIC_URL }}signup/images/swept-logo.png" alt="Modern Bussines 5"></a></h1>
+
+<!--
+				<nav id="top-nav">
+						<ul>
+								<li><a class="active" href="#">Home</a></li>
+								<li><a href="#">Blog</a></li>
+						</ul>
+				</nav>
+End Nav--> 
+
+		</div>
+		<!--End .wrapper--> 
+</header>
+
+<!--Start Splash-->
+
+<section class="splash">
+		<div class="wrapper">
+				<section id="buy-splash" class="splash-half first">
+								<h3>Any man has a chance to sweep any woman off her feet. He just needs the right broom. </h3> 
+								<p>Thanks for signing up.</p>
+								<h4>We'll let you know when the app is available.</h4>
+				</section>
+			<section id="splash-img" class="splash-half"> <img src="{{ STATIC_URL }}signup/images/iphones.png" alt="iPhones"> </section>
+		</div>
+</section>
+<!--End Splash
+
+
+--> 
+
+
+<!--Start The Team
+<div class="wrapper">
+		<h2>MEET THE TEAM.</h2>
+		<section id="about" class="container">
+				<section class="one-third first"><img src="" alt="Staff"></section>
+				<section class="two-third">
+						<h3></h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ullamcorper feugiat sem nec accumsan. Quisque lobortis volutpat sem quis scelerisque. 
+								
+								Etiam posuere imperdiet diam, ut sollicitudin lacus adipiscing et. Nunc ac purus sed tortor tincidunt gravida. Cras ac turpis id nulla iaculis ultricies. Vestibulum metus diam, tempor ut tristique eu, hendrerit quis tellus. Quisque in diam sapien.</p>
+                                
+						<ul class="social">
+								<li><a href="#" class="gplus tip" title="Google Plus">Google Plus</a></li>
+								<li><a href="#" class="twitter tip" title="Twitter">Twiiter</a></li>
+								<li><a href="#" class="linkedin tip" title="Linkedin">linkedin</a></li>
+								<li><a href="#" class="facebook tip" title="Facebook">Facebook</a></li>
+						</ul>
+                                
+				</section>
+				<hr>
+				<blockquote></blockquote>
+		</section>
+</div>
+End the team--> 
+
+
+</body></html>

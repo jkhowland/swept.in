@@ -177,10 +177,10 @@ input[type=text] {
 	padding: 5px;
 }
 button[type=submit] {
+	margin-left: 148px;
 	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 	font-size: 1.429em;
 	text-shadow: 0px 1px 1px rgba(0,0,0,.4);
-	display: block;
 	height: 35px;
 	display: block;
 	-webkit-box-sizing: border-box;
@@ -369,15 +369,22 @@ div.video-frame iframe {
 /*-----------------------------------------------------*/
 /*--------------------Header---------------------------*/
 header {
-	margin-top: 40px;
+	margin-top: 20px;
 	height: 80px;
 }
-header div.wapper { padding-top: 30px; }
+header div.wapper { 
+
+padding-top: 30px; }
 /*--------------------Logo---------------------------*/
 h1.logo {
 	position: relative;
 	float: left;
-	margin-top: 10px;
+
+}
+
+h1.logo img {
+	height:75px;
+
 }
 /*-------------------Navigation------------------------*/
 nav#top-nav, nav#bottom-nav { float: right; }
@@ -558,8 +565,9 @@ ul.buttons li {
 }
 /*--------------------splash---------------------------*/
 section.splash {
+	text-align: center;
 	width: 100%;
-	min-height: 23.420em;
+	min-height: 32.420em;
 	padding-top: 20px;
 	background-color: white;
 	background-color: rgb(255,255,255);
@@ -689,6 +697,10 @@ div.video-frame {
 section#l-benefits { text-align: center; }
 img.benefit { float: left; }
 div.right {
+
+	background-image:url('dots-repeat.png');
+	background-image:repeat-y;
+
 	float: right;
 	max-width: 280px;
 	margin-bottom: 40px;
@@ -1213,6 +1225,11 @@ html[xmlns] .slides { display: block; }
 /*-----------------------Setup------------------------*/
 .wrapper { width: 748px; }
 .first { margin: 0; }
+
+button[type=submit] {
+	margin-left: 280px;
+}
+
 /*----------------------Splash------------------------*/
 section.splash { overflow: hidden; min-height: 18em; }
 .splash-half {
@@ -1299,8 +1316,14 @@ img.benefit {
 blockquote { max-width: 370px; }
 a[class*=btn-] { width: 170px; }
 ul.social { list-style: none; margin-bottom: 20px; }
+
+
+button[type=submit] {
+	margin-left: 148px;
+}
+
 /*----------------------Header------------------------*/
-header { margin-bottom: 20px; }
+header { margin-bottom: 40px; }
 h1.logo {
 	float: none;
 	width: 200px;
@@ -1312,7 +1335,7 @@ nav#top-nav, nav#bottom-nav {
 	margin-left: auto;
 	margin-right: auto;
 	width: 200px;
-	margin-top: -5px;
+	margin-top: -20px;
 }
 nav ul li { margin-right: 15px; }
 nav ul li:last-child { margin-right: 0; }
@@ -1402,6 +1425,7 @@ ul.cta { text-align: center; }
 ul.social { list-style: none; margin-bottom: 20px; }
 /*-----------------Buttons----------------------*/
 button[type=submit] {
+	margin-left: 90px;
 	font-size: 0.8em;
 	width: 110px;
 	line-height: 28px;
@@ -1434,7 +1458,7 @@ a.btn-grey span.price {
 	padding: 9px 5px 8px 0;
 }
 /*-----------------Header-----------------------*/
-header { margin-bottom: 20px; }
+ header { margin-bottom: 40px; } 
 h1.logo {
 	float: none;
 	width: 200px;
@@ -1447,7 +1471,7 @@ nav#top-nav, nav#bottom-nav {
 	margin-left: auto;
 	margin-right: auto;
 	width: 200px;
-	margin-top: 0px;
+	margin-top: -20px;
 }
 nav ul li { margin-right: 15px; }
 nav ul li:last-child { margin-right: 0; }
