@@ -5,7 +5,7 @@ class SettingAdmin(admin.ModelAdmin):
     list_display = ('user','setting_type',)
 
 class SettingTypeAdmin(admin.ModelAdmin):
-    list_display = ('name','app',)
+    list_display = ('name',)
     
 admin.site.register(Setting, SettingAdmin)
 admin.site.register(SettingType, SettingTypeAdmin)

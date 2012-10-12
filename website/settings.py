@@ -113,7 +113,6 @@ INSTALLED_APPS = (
     'api',
     'apikeytoken',
     'settings',
-    'apps',
     'subusers',
     'events',
     'emails',

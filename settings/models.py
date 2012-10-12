@@ -1,10 +1,7 @@
-
 from django.db import models
 from django.contrib.auth.models import User
-from apps.models import App
     
 class SettingType(models.Model):
-    app = models.ForeignKey(App)
     name = models.CharField(max_length=200)
     description = models.TextField()
     
@@ -13,6 +10,7 @@ class SettingType(models.Model):
       ('S', 'String'),
       ('A', 'Array' ),
       ('B', 'Boolean'),
+      ('D', 'Date'),
       ) 
     
     type = models.CharField(max_length=1, choices=SETTINGS_TYPE_CHOICES)
@@ -23,7 +21,7 @@ class SettingType(models.Model):
     value_min = models.IntegerField()    
         
     def __unicode__(self):
-        return self.app.name + ' - ' + self.name
+        return self.name
 
     
 class Setting(models.Model):

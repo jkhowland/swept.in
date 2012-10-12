@@ -14,5 +14,4 @@ urlpatterns = patterns('',
 )
 
 #  url(r'^$', redirect_to, {'url': '/profile/'}),
-#  url(r'^apps/', include('apps.urls')),
 #  url(r'^', include('accounts.urls')),

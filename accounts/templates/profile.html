@@ -12,10 +12,4 @@
   <li><a href="{% url auth_password_change %}">Change password</a></li>
 </ul>
 
-<ul>
-{% for app in available_apps_list %}
-    <li><a href="/apps/{{app.slug}},{{app.id}}/settings/">{{ app }}</a></li>
-{% endfor %}
-</ul>
-
 {% endblock %}

@@ -5,13 +5,13 @@ class ActivityGroupAdmin(admin.ModelAdmin):
   list_display = ('name',)
 
 class ActivityAdmin(admin.ModelAdmin):
-  list_display = ('name','app','subuser',) 
+  list_display = ('name','subuser',) 
 
 class EventAdmin(admin.ModelAdmin):
-  list_display = ('question_description','percentage')
+  list_display = ('description',)
   
 class AchievementTypeAdmin(admin.ModelAdmin):
-  list_display = ('name', 'app', 'curriculum_bool')
+  list_display = ('name',)
 
 class AchievementAdmin(admin.ModelAdmin):
   list_display = ('subuser', 'percentage')

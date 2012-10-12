@@ -6,15 +6,13 @@ from django.contrib.auth.models import User
 from mailsnake import MailSnake
 from django.conf import settings
 from django.http import HttpResponse
-from apps.models import App
 import logging
 
 logger = logging.getLogger(__name__)
 
 @login_required
 def profile(request):
-  available_apps_list = App.objects.all().order_by('name')
-  return render(request, 'profile.html', {'available_apps_list': available_apps_list})
+  return render(request, 'profile.html')
 
 @login_required
 def newsletter_preferences(request):

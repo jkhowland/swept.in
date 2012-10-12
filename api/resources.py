@@ -20,7 +20,6 @@ from registration.models import RegistrationProfile
 from serializers import CustomJSONSerializer
 import logging
 from settings.models import SettingType, Setting
-from apps.models import App
 from subusers.models import SubUser, SubUserData
 from events.models import ActivityGroup, Activity, Event, AchievementType, Achievement
 
@@ -125,7 +124,7 @@ class UserResource(ModelResource):
   class Meta:
     queryset = User.objects.all()
     resource_name = 'users'
-    fields = ['id', 'email', 'is_activated', 'newsletter']
+    fields = ['id', 'email', 'first_name', 'last_name', 'is_activated', 'newsletter']
     list_allowed_methods = ['get']
     detail_allowed_methods = ['get', 'put']
     authentication = ApiKeyTokenAuthentication()
@@ -164,20 +163,6 @@ class UserResource(ModelResource):
     Only permit access to the current user's user.
     '''
     return object_list.filter(id=request.user.id)
-
-class AppResource(ModelResource):
-  class Meta:
-    queryset = App.objects.all()
-    resource_name = 'apps'
-    list_allowed_methods = ['get']
-    detail_allowed_methods = ['get']
-    authentication = ApiKeyTokenAuthentication()
-    authorization = Authorization()
-    serializer = CustomJSONSerializer(formats=['json'])
-    
-  def get_object_list(self, request):
-    return super(AppResource, self).get_object_list(request)
-
   
 class SettingTypeResource(ModelResource):
   class Meta:
@@ -190,7 +175,7 @@ class SettingTypeResource(ModelResource):
     serializer = CustomJSONSerializer(formats=['json'])
 
   def get_object_list(self, request):
-    return super(SettingTypeResource, self).get_object_list(request).filter(app__api_key=request.api_key)
+    return super(SettingTypeResource, self).get_object_list(request)
 
 
 class SettingResource(ModelResource):
@@ -215,11 +200,11 @@ class SettingResource(ModelResource):
         return super(SettingResource, self).obj_create(bundle, request, user=request.user)
 
   def get_object_list(self, request):
-    return super(SettingResource, self).get_object_list(request).filter(setting_type__app__api_key=request.api_key)
+    return super(SettingResource, self).get_object_list(request)
 
 class SubUserResource(ModelResource):
   user = fields.ToOneField(UserResource, 'user')
-  
+
   class Meta:
     queryset = SubUser.objects.all()
     resource_name = 'subusers'
@@ -244,7 +229,6 @@ class SubUserResource(ModelResource):
 
 class SubUserDataResource(ModelResource): 
   subuser = fields.ToOneField(SubUserResource, 'subuser')
-  app = fields.ToOneField(AppResource, 'app')
    
   class Meta:
     queryset = SubUserData.objects.all()
@@ -262,11 +246,10 @@ class SubUserDataResource(ModelResource):
     return object_list.filter(subuser__user=request.user)
 
   def obj_create(self, bundle, request=None, **kwargs):
-        requestApp = App.objects.get(api_key=request.api_key)
-        return super(SubUserDataResource, self).obj_create(bundle, request, app=requestApp)
+        return super(SubUserDataResource, self).obj_create(bundle, request)
         
   def get_object_list(self, request):
-        return super(SubUserDataResource, self).get_object_list(request).filter(app__api_key=request.api_key)
+        return super(SubUserDataResource, self).get_object_list(request)
 
 class ActivityGroupResource(ModelResource):
   subuser = fields.ToOneField(SubUserResource, 'subuser')
@@ -296,8 +279,8 @@ class ActivityGroupResource(ModelResource):
 
 class ActivityResource(ModelResource):
   subuser = fields.ToOneField(SubUserResource, 'subuser')
-  app = fields.ToOneField(AppResource, 'app')
-  
+  kit_id = fields.CharField(attribute='kit_id')
+
   class Meta:
     queryset = Activity.objects.all()
     resource_name = 'activities'
@@ -314,15 +297,15 @@ class ActivityResource(ModelResource):
     return object_list.filter(subuser__user=request.user)
 
   def obj_create(self, bundle, request=None, **kwargs):
-    requestApp = App.objects.get(api_key=request.api_key)
-    return super(ActivityResource, self).obj_create(bundle, request, app=requestApp)
+    return super(ActivityResource, self).obj_create(bundle, request)
 
   def get_object_list(self, request):
-    return super(ActivityResource, self).get_object_list(request).filter(app__api_key=request.api_key)
+    return super(ActivityResource, self).get_object_list(request)
   
 
 class EventResource(ModelResource): 
   activity = fields.ToOneField(ActivityResource, 'activity')
+  task_id = fields.CharField(attribute='task_id')
    
   class Meta:
     queryset = Event.objects.all()
@@ -343,8 +326,7 @@ class EventResource(ModelResource):
         return super(EventResource, self).obj_create(bundle, request)
         
   def get_object_list(self, request):
-        return super(EventResource, self).get_object_list(request).filter(activity__app__api_key=request.api_key)
-
+        return super(EventResource, self).get_object_list(request)
 
 
 class AchievementTypeResource(ModelResource):
@@ -358,7 +340,7 @@ class AchievementTypeResource(ModelResource):
     serializer = CustomJSONSerializer(formats=['json'])
 
   def get_object_list(self, request):
-    return super(AchievementTypeResource, self).get_object_list(request).filter(app__api_key=request.api_key)
+    return super(AchievementTypeResource, self).get_object_list(request)
 
 
 class AchievementResource(ModelResource):
@@ -384,4 +366,4 @@ class AchievementResource(ModelResource):
         return super(AchievementResource, self).obj_create(bundle, request)
 
   def get_object_list(self, request):
-    return super(AchievementResource, self).get_object_list(request).filter(achievement_type__app__api_key=request.api_key)
+    return super(AchievementResource, self).get_object_list(request)

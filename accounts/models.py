@@ -12,6 +12,8 @@ class UserProfile(models.Model):
   user = models.OneToOneField(User)
 
   newsletter = models.BooleanField()
+  first_name = models.CharField(max_length=200)  
+  last_name = models.CharField(max_length=200)
   
   def save(self, dispatch_signal=True, **kwargs):
     self.save_base(raw=not dispatch_signal, **kwargs)
