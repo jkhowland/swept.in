@@ -6,7 +6,7 @@ TEMPLATE_DEBUG = DEBUG
 DATABASES = {
   'default': {
     'ENGINE': 'django.db.backends.mysql',
-    'NAME': 'swept_server',
+    'NAME': 'swept_server_v1',
     'USER': 'admin',
     'PASSWORD': 'puWwutQanJXFcb4w',
     'HOST': '',
